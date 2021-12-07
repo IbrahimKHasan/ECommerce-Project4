@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="shoppingcart.css">
 </head>
 <body>
 
  <div>
  <?php include("headerMoney.php");?>
- </div>
-    
-    <?php include("cartInclude.php");?>
+ 
+    <?php include("shoppingCart.php");?>
+</div>
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <?php include("footerMoney.php");?>
     <script src="cart.js"></script>

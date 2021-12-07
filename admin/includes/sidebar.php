@@ -34,7 +34,7 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Dashboards</li>
                 <li>
-                    <a href="index.html"  id="manage-dash">
+                    <a href="index.php"  id="manage-dash">
                         <i class="metismenu-icon pe-7s-rocket"></i>
                         Main Dashboard
                     </a>
@@ -84,7 +84,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="manage_coupon.php" id="manage-comments">
+                    <a href="manage_coupon.php" id="manage-coupon">
                         <i class="metismenu-icon fas fa-percentage"></i>
                         Coupon
                     </a>

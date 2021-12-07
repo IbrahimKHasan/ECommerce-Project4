@@ -12,7 +12,7 @@ $result = $conn->query($fetch_query);
 <div class="page-heading" id="top">
   <div class="container">
     <div class="row">
-     
+
     </div>
   </div>
 </div>
@@ -23,18 +23,18 @@ $result = $conn->query($fetch_query);
 $row = $result->fetch_assoc();
 
 ?>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div  class="col-md-8">
-        <div style="display: none;" id="myP1" class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-          <strong>The item Added Successfully </strong> 
-          <button   type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-      <div class="col-md-2"></div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div style="display: none;" id="myP1" class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+      <strong>The item Added Successfully </strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
 <!-- ***** Product Area Starts ***** -->
 <section class="section mt-0" id="product">
   <div class="container">
@@ -56,24 +56,15 @@ $row = $result->fetch_assoc();
             <li><i class="fa fa-star"></i></li>
           </ul>
           <span><?php echo $row["item_desc"]; ?></span>
-          <div class="quantity-content">
-            <div class="left-content">
-              <h6>No. of Orders</h6>
-            </div>
-            <div class="right-content">
-              <div class="quantity buttons_added">
-                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
-              </div>
-            </div>
-          </div>
+          <hr>
           <div class="total">
             <h4>Total: <?php echo "$" . $row["item_price"]; ?></h4>
           </div>
-          <Button  class="btn ml-3 mt-1" style="background-color:#0096db;"><a style="color:white" href="<?php echo ($_SESSION['login'] == 'true') ? "money/addToCart.php?m=no&id={$_GET['id']}" : "#" ?>">Add To Cart</a></Button>
+          <Button class="btn ml-3 mt-1" style="background-color:#0096db;"><a style="color:white" href="<?php echo ($_SESSION['login'] == 'true') ? "money/addToCart.php?m=no&id={$_GET['id']}" : "#" ?>">Add To Cart</a></Button>
         </div>
       </div>
     </div>
-   
+
 
     <?php
 
@@ -107,38 +98,36 @@ $row = $result->fetch_assoc();
         </form>
         <br><br>
         <h5 class="mb-2">Reviews</h5>
-      <hr>
-      <?php
-      $fetch_query = "SELECT user_fullname,comment_statment FROM comments,user where comments.user_id = user.user_id and item_id = {$_GET['id']} ";
-      $result = $conn->query($fetch_query);
-      ?>
+        <hr>
+        <?php
+        $fetch_query = "SELECT user_fullname,comment_statment FROM comments,user where comments.user_id = user.user_id and item_id = {$_GET['id']} ";
+        $result = $conn->query($fetch_query);
+        ?>
 
-      <?php while ($row = $result->fetch_assoc()) : ?>
-        <div class="col-md-12 d-flex pt-2 pb-2 mb-1" style="background-color: #e9e9e9; border-radius: 6px">
-          <div class="user-img-container">
-            <img class="user-img" style="width: 70px;" src="assets/images/user-1.png" alt="">
+        <?php while ($row = $result->fetch_assoc()) : ?>
+          <div class="col-md-12 d-flex pt-2 pb-2 mb-1" style="background-color: #e9e9e9; border-radius: 6px">
+            <div class="user-img-container">
+              <img class="user-img" style="width: 70px;" src="assets/images/user-1.png" alt="">
+            </div>
+            <div class="user-comment-container d-flex flex-column" style="padding: 10px;">
+              <h5 class="username"><?php echo $row["user_fullname"] ?></h5>
+              <p class="user-comment">
+                <?php echo $row["comment_statment"] ?>
+              </p>
+            </div>
           </div>
-          <div class="user-comment-container d-flex flex-column" style="padding: 10px;">
-            <h5 class="username"><?php echo $row["user_fullname"] ?></h5>
-            <p class="user-comment">
-              <?php echo $row["comment_statment"] ?>
-            </p>
-          </div>
-        </div>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
+      </div>
     </div>
-  </div>
   </div>
 </section>
 <!-- ***** Product Area Ends ***** -->
 <!-- ***** Subscribe Area Ends ***** -->
 <?php include("footer.php");
-if (isset($_GET['added'])) {?>
+if (isset($_GET['added'])) { ?>
   <script>
- 
-      document.getElementById("myP1").style.display = "block";
-     
+    document.getElementById("myP1").style.display = "block";
   </script>
-   <?php
- }
- ?>
+<?php
+}
+?>

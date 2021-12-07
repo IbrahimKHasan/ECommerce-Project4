@@ -138,7 +138,7 @@ $query_run = mysqli_query($conn, $query);
 </div>
 <?php include("includes/javascript.php"); 
    ?>
+<script type="text/javascript" src="./assets/scripts/main.js"></script>
 <script>
     document.getElementById("manage-admins").classList.add("mm-active")
 </script>
-<script type="text/javascript" src="./assets/scripts/main.js"></script>

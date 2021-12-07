@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 02:14 PM
+-- Generation Time: Dec 07, 2021 at 11:32 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -41,7 +41,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `admin_date_create`, `admin_last_login`) VALUES
-(10, 'haneen omar ayasrah', 'haneen.alayasrah@gmail.com', '159357', NULL, '2021-12-05');
+(10, 'haneen omar ayasrah', 'haneen.alayasrah@gmail.com', '159357', NULL, '2021-12-07'),
+(11, 'Hassan', 'hassanwael@gmail.com', 'Aa@12345', '2021-12-06', '2021-12-06');
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ INSERT INTO `category` (`cat_id`, `cat_name`, `cat_image`) VALUES
 (1, 'COVID Testing Kits', '7154corona.jpg'),
 (2, 'Quit Smoking', '2260smoking.jpg'),
 (3, 'Face Coverings & Masks', '1829mask.jpg'),
-(4, 'children Health', '3947kids.jpg');
+(4, 'Children Health', '3033cat_pha.png');
 
 -- --------------------------------------------------------
 
@@ -78,6 +79,14 @@ CREATE TABLE `comments` (
   `item_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `user_id`, `comment_statment`, `item_id`) VALUES
+(4, 0, 'Hello\r\n', 7),
+(5, 13, 'test', 18);
+
 -- --------------------------------------------------------
 
 --
@@ -90,6 +99,14 @@ CREATE TABLE `coupon` (
   `coupon_percentage` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `coupon`
+--
+
+INSERT INTO `coupon` (`coupon_id`, `coupon_code`, `coupon_percentage`) VALUES
+(1, 'Hassan_OT', 20),
+(2, 'Salameh100', 15);
+
 -- --------------------------------------------------------
 
 --
@@ -99,16 +116,19 @@ CREATE TABLE `coupon` (
 CREATE TABLE `history` (
   `history_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `item_id` int(11) DEFAULT NULL,
-  `history_date` date DEFAULT NULL
+  `item_id` varchar(255) DEFAULT NULL,
+  `history_date` date DEFAULT NULL,
+  `coupon_Id` int(11) NOT NULL,
+  `order_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `history`
 --
 
-INSERT INTO `history` (`history_id`, `user_id`, `item_id`, `history_date`) VALUES
-(1, 1, 1, '0000-00-00');
+INSERT INTO `history` (`history_id`, `user_id`, `item_id`, `history_date`, `coupon_Id`, `order_price`) VALUES
+(509109, 11, ' -Zarbee s-Zarbee s-Pepto-Nicorette', '2021-12-07', 2, 28.9),
+(630110, 11, ' -Zarbee s-Necano-McSimon-Kingfa-Purian', '2021-12-07', 2, 58.65);
 
 -- --------------------------------------------------------
 
@@ -179,7 +199,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_fullname`, `user_email`, `user_password`, `user_date_create`, `user_last_login`, `user_phone`, `user_city`) VALUES
-(11, 'haneen', 'user@gmail.com', 'Aa@12345', '2021-12-04', '2021-12-05', '777758329', 'amman');
+(11, 'haneen ayasreh', 'user@gmail.com', 'Aa@12345', '2021-12-04', '2021-12-07', '777758329', 'Amman'),
+(13, 'Hassan aqilan Wael', 'hassan@gmail.com', 'Aa@12345', '2021-12-05', '2021-12-07', '0797954379', ''),
+(14, 'Ibraahim Hasan', 'ibrah@gmail.com', 'Aa@12345', '2021-12-07', '2021-12-07', '0788810289', '');
 
 --
 -- Indexes for dumped tables
@@ -235,7 +257,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -247,7 +269,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `coupon`
@@ -259,7 +281,7 @@ ALTER TABLE `coupon`
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=978530;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -271,7 +293,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
