@@ -92,18 +92,18 @@ $row1=$result1->fetch_assoc();
 
     <div class="row">
       <div class="col-md-12 pt-3 pb-3">
-        <h5 class="mb-2">Add Comment</h5>
+        <h5 style="display:<?php if(isset($_SESSION['login'])&&$_SESSION['login']=='false'){echo "none";}else{echo "";} ?>" class="mb-2">Add Comment</h5>
         <form method="POST" class="needs-validation" novalidate>
           <div class="form-row">
             <div class="col-md-12 mb-8">
-              <textarea name="comment-input" class="form-control" id="validationCustom01" placeholder="Write Comment" cols="600" rows="7"></textarea>
+              <textarea style="display:<?php if(isset($_SESSION['login'])&&$_SESSION['login']=='false'){echo "none";}else{echo "";} ?>" name="comment-input" class="form-control" id="validationCustom01" placeholder="Write Comment" cols="600" rows="7"></textarea>
               <!-- <input type="text"  id="validationCustom01"  value="" required name="comment-input"> -->
               <div class="valid-feedback">
                 Looks good!
               </div>
             </div>
           </div>
-          <button class="btn mt-2" style="background-color:#0096db;color:white" type="submit" name="publish-comment">Comment</button>
+          <button class="btn mt-2" style="display:<?php if(isset($_SESSION['login'])&&$_SESSION['login']=='false'){echo "none";}else{echo "";} ?>;background-color:#0096db;color:white" type="submit" name="publish-comment">Comment</button>
         </form>
         <br><br>
         <h5 class="mb-2">Reviews</h5>
