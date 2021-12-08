@@ -25,6 +25,7 @@ session_start();
 
   }
 
+
 ?>
 
 <?php include("includes/header.php"); ?>
@@ -42,6 +43,7 @@ session_start();
                 <tr>
                   <th># Comment Id</th>
                   <th>User Id</th>
+                  <th>User Name</th>
                   <th>Comment Statement</th>
                   <th>Item Name</th>
                   <th>Delete</th>
@@ -53,10 +55,17 @@ session_start();
                   $result = $conn->query($fetch_query);
                 ?>
                 <?php if ($result->num_rows > 0) : ?>
-                  <?php while ($row = $result->fetch_assoc()) : ?>
+                  <?php while ($row = $result->fetch_assoc()) : 
+                  $id_user=$row['user_id'];
+                      $user="SELECT user_fullname from user WHERE user_id=$id_user";
+                      $user_result = mysqli_query($conn, $user);
+                      $row_user=mysqli_fetch_assoc($user_result);
+                    
+                    ?>
                     <tr>
                       <th scope="row"><?php echo $row["comment_id"]; ?></th>
                       <td><?php echo $row["user_id"]; ?></td>
+                      <td><?php echo $row_user["user_fullname"]; ?></td> 
                       <td><?php echo $row["comment_statment"]; ?></td>
                       <td><?php echo $row["item_name"]; ?></td>
                       <td>
@@ -75,9 +84,10 @@ session_start();
     </div>
   </div>
 </div>
-<?php include("includes/javascript.php"); 
-   ?>
+
 <script type="text/javascript" src="./assets/scripts/main.js"></script>
 <script>
     document.getElementById("manage-comments").classList.add("mm-active")
 </script>
+<?php include("includes/javascript.php"); 
+   ?>

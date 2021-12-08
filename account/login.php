@@ -104,16 +104,26 @@ if (isset($_POST['login'])) {
     .true-login {
       color: rgb(109, 171, 228);
     }
+    @media(max-width:767px){
+        .signin-image1{
+              display:none;
+      }
+      .signup-image-link{
+              margin-top:0px;
+            }
+    
+    
+    }
   </style>
 </head>
 
 <body>
   <!-- Sing in  Form -->
-  <section class="sign-in">
-    <div class="container">
+  <section class="sign-in" style="margin-top:100px">
+    <div class="container ">
       <div class="signin-content">
         <div class="signin-image">
-          <figure><img src="images/login.jpg" alt="sing up image"></figure>
+          <figure class="signin-image1"><img src="images/login.jpg" alt="sing up image"></figure>
           <a href="signup.php" class="signup-image-link">Create an account</a>
         </div>
 
@@ -142,6 +152,7 @@ if (isset($_POST['login'])) {
               echo @$passM . "<br>";
               echo "</div>";
             }
+            
             ?>
           </form>
         </div>

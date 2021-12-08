@@ -76,7 +76,6 @@ if ($register1 == true && $register2 == true && $register3 == true && $register4
         $class              = 'false';
         }
         if ($check == true){
-        $registerM          = "You Have Register Successfully";
         $register           = "can";
         $class              = 'true';
         $name               = $_POST['name'];
@@ -122,12 +121,16 @@ array_push($errors, $error1, $error2, $error3, $error4, $error5);
         .true-login{
             color: rgb(109,171,228);
         }     
-
+        @media(max-width:767px){
+            .signup-image1{
+            display:none;
+            }
+        }
     </style>
 </head>
-<body>
+<body style="height:1vh">
         <!-- Sign up form -->
-        <section class="signup">
+        <section class="signup" style="margin-top:50px">
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
@@ -195,7 +198,7 @@ array_push($errors, $error1, $error2, $error3, $error4, $error5);
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img width="800px" src="images/signup.jpg" alt="sing up image"></figure>
+                        <figure class="signup-image1"><img width="800px" src="images/signup.jpg" alt="sing up image"></figure>
                         <a href="login.php" class="signup-image-link">I am already member</a>
                     </div>
                 </div>

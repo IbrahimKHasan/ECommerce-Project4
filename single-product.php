@@ -19,10 +19,19 @@ $result = $conn->query($fetch_query);
 <!-- ***** Main Banner Area End ***** -->
 
 <?php
-
+$id=$_GET["id"];
 $row = $result->fetch_assoc();
-
+$cat="SELECT category.cat_name,category.cat_id as cat_id1 FROM category,item WHERE item.item_id=$id and item.cat_id=category.cat_id";
+$result1= $conn->query($cat);
+$row1=$result1->fetch_assoc();
 ?>
+ <nav style="width:74%; margin:auto" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="http://localhost/pharmacy/index.php">Home</a></li>
+    <li class="breadcrumb-item"><a href="http://localhost/pharmacy/products.php?id=<?php echo $row1['cat_id1'];?>"><?php echo $row1['cat_name']; ?></a></li>
+    <li class="breadcrumb-item active" aria-current="page"><?php echo $row['item_name']; ?></li>
+  </ol>
+</nav>
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
@@ -68,7 +77,7 @@ $row = $result->fetch_assoc();
 
     <?php
 
-    if (isset($_POST["publish-comment"])) {
+    if (isset($_POST["publish-comment"])&&isset($_SESSION['login'])&& $_SESSION['login']=='true') {
 
       $comment_statment = $_POST["comment-input"];
 
@@ -94,7 +103,7 @@ $row = $result->fetch_assoc();
               </div>
             </div>
           </div>
-          <button class="btn mt-2" style="background-color:#0096db;color:white" type="submit" name="publish-comment">Publish Comment</button>
+          <button class="btn mt-2" style="background-color:#0096db;color:white" type="submit" name="publish-comment">Comment</button>
         </form>
         <br><br>
         <h5 class="mb-2">Reviews</h5>

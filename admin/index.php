@@ -68,7 +68,7 @@ include("includes/header.php");
         </div>
 
       </div>
-
+<!-- 
       <div class="row">
         <div class="card-header-tab card-header-tab-animation card-header col-md-11 col-xl-11 m-auto ">
           <div class="card-header-title">
@@ -76,8 +76,6 @@ include("includes/header.php");
             Sales Report
           </div>
           <ul class="nav">
-            <li class="nav-item"><a href="javascript:void(0);" class="active nav-link">Last</a></li>
-            <li class="nav-item"><a href="javascript:void(0);" class="nav-link second-tab-toggle">Current</a></li>
           </ul>
         </div>
         <div class="card mb-3 widget-chart widget-chart2 text-left w-100 col-md-11 col-xl-11 m-auto">
@@ -87,7 +85,7 @@ include("includes/header.php");
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 

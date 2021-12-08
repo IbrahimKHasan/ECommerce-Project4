@@ -99,7 +99,7 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="http://localhost/pharmacy/index.php" class="logo">
-                            <img src="../assets/images/logoo2.png" width="100px" height="80px">
+                            <img src="../assets/images/logoo2.png" width="70px" height="60px">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2021 at 11:32 PM
+-- Generation Time: Dec 08, 2021 at 03:43 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -41,8 +41,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `admin_date_create`, `admin_last_login`) VALUES
-(10, 'haneen omar ayasrah', 'haneen.alayasrah@gmail.com', '159357', NULL, '2021-12-07'),
-(11, 'Hassan', 'hassanwael@gmail.com', 'Aa@12345', '2021-12-06', '2021-12-06');
+(10, 'haneen omar ayasrah', 'haneen.alayasrah@gmail.com', '159357', NULL, '2021-12-08'),
+(11, 'Hassan', 'hassanwael@gmail.com', 'Aa@12345', '2021-12-06', '2021-12-06'),
+(13, 'Admin', 'admin@gmail.com', 'Aa@12345', '2021-12-08', '2021-12-08');
 
 -- --------------------------------------------------------
 
@@ -84,8 +85,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `user_id`, `comment_statment`, `item_id`) VALUES
-(4, 0, 'Hello\r\n', 7),
-(5, 13, 'test', 18);
+(5, 13, 'test', 18),
+(10, 14, 'Good', 8);
 
 -- --------------------------------------------------------
 
@@ -128,7 +129,8 @@ CREATE TABLE `history` (
 
 INSERT INTO `history` (`history_id`, `user_id`, `item_id`, `history_date`, `coupon_Id`, `order_price`) VALUES
 (509109, 11, ' -Zarbee s-Zarbee s-Pepto-Nicorette', '2021-12-07', 2, 28.9),
-(630110, 11, ' -Zarbee s-Necano-McSimon-Kingfa-Purian', '2021-12-07', 2, 58.65);
+(630110, 11, ' -Zarbee s-Necano-McSimon-Kingfa-Purian', '2021-12-07', 2, 58.65),
+(864506, 11, ' -Zarbee s', '2021-12-08', 0, 10);
 
 -- --------------------------------------------------------
 
@@ -199,9 +201,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_fullname`, `user_email`, `user_password`, `user_date_create`, `user_last_login`, `user_phone`, `user_city`) VALUES
-(11, 'haneen ayasreh', 'user@gmail.com', 'Aa@12345', '2021-12-04', '2021-12-07', '777758329', 'Amman'),
+(11, 'haneen ayasreh', 'user@gmail.com', 'Aa@12345', '2021-12-04', '2021-12-08', '777758329', 'Amman'),
 (13, 'Hassan aqilan Wael', 'hassan@gmail.com', 'Aa@12345', '2021-12-05', '2021-12-07', '0797954379', ''),
-(14, 'Ibraahim Hasan', 'ibrah@gmail.com', 'Aa@12345', '2021-12-07', '2021-12-07', '0788810289', '');
+(14, 'Ibrahim Hasan', 'ibrah@gmail.com', 'Aa@12345', '2021-12-07', '2021-12-08', '0788810289', '');
 
 --
 -- Indexes for dumped tables
@@ -257,7 +259,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -269,7 +271,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `coupon`

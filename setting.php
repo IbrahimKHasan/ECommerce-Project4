@@ -27,7 +27,7 @@ if (isset($_POST["edit_btn"])) {
 $selectx = "SELECT * FROM history where user_id = $id";
 $rowx = $conn->query($selectx);
 
-print_r($rowx);
+
 
 ?>
 
