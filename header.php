@@ -43,8 +43,8 @@ if (isset($_POST['logout'])){
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>Hexashop - Product Detail Page</title>
+    <link rel="favicon" href="assets/images/logohead.png">
+    <title>Pharma Street | Ecommerce</title>
 
 
     <!-- Additional CSS Files -->

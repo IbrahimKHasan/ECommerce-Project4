@@ -56,7 +56,7 @@ session_start();
                 ?>
                 <?php if ($result->num_rows > 0) : ?>
                   <?php while ($row = $result->fetch_assoc()) : 
-                  $id_user=$row['user_id'];
+                      $id_user=$row['user_id'];
                       $user="SELECT user_fullname from user WHERE user_id=$id_user";
                       $user_result = mysqli_query($conn, $user);
                       $row_user=mysqli_fetch_assoc($user_result);

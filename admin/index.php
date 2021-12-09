@@ -16,6 +16,9 @@ $items= mysqli_num_rows($query_run3);
 $sales="SELECT SUM(order_price) FROM history";
 $row=mysqli_query($conn , $sales);
 $sum = mysqli_fetch_assoc($row);
+
+$selectx = "SELECT * from history,user where user.user_id = history.user_id;";
+$rowx = $conn->query($selectx);
 ?>
 <?php
 //Header of the Page
@@ -66,6 +69,36 @@ include("includes/header.php");
             </div>
           </div>
         </div>
+        <div class="col-lg-12">
+        <div class="main-card mb-3 card">
+          <div class="card-body">
+            <h5 class="card-title">Orders History</h5>
+            <table class="mb-0 table table-striped">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>User Name</th>
+                  <th>Items</th>
+                  <th>Order Date</th>
+                  <th>Order Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                while($row = $rowx->fetch_assoc()){?>
+                <tr>
+                  <th scope="row"><?php echo $row["history_id"]; ?></th>
+                  <td><?php echo $row["user_fullname"]; ?></td>
+                  <td><?php echo str_replace("-","<br>",substr($row["item_id"],2)); ?></td>
+                  <td><?php echo $row["history_date"]; ?></td>
+                  <td><?php echo "$".$row["order_price"];?></td>
+                </tr>
+                <?php }?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
       </div>
 <!-- 
