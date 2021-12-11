@@ -96,7 +96,7 @@ include("admin/includes/config.php");
                                     <h4><?php echo $row_item["item_name"]; ?></h4>
                                     </a>
                                     <span><?php echo "$". $row_item["item_price"]; ?></span>
-                                    <span> <a href=" <?php echo ($_SESSION['login']=='true')?"money/addToCart.php?id={$row_item['item_id']}" :"#"?>"><Button style="background-color:#0096db;color:white" class="btn mt-2">Add to Cart</Button></a></span>
+                                    <span> <a href=" <?php echo isset($_SESSION['login'])&&($_SESSION['login']=='true')?"money/addToCart.php?id={$row_item['item_id']}" :"#"?>"><Button style="background-color:#0096db;color:white" class="btn mt-2">Add to Cart</Button></a></span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -153,7 +153,7 @@ include("admin/includes/config.php");
                                     <h4><?php echo $row_item["item_name"]; ?></h4>
                                     </a>
                                     <span><?php echo "$". $row_item["item_price"]; ?></span>
-                                    <span> <a href=" <?php echo ($_SESSION['login']=='true')?"money/addToCart.php?id={$row_item['item_id']}" :"#"?>"><Button style="background-color:#0096db;color:white" class="btn mt-2">Add to Cart</Button></a></span>
+                                    <span> <a href=" <?php echo isset($_SESSION['login'])&&($_SESSION['login']=='true')?"money/addToCart.php?id={$row_item['item_id']}" :"#"?>"><Button style="background-color:#0096db;color:white" class="btn mt-2">Add to Cart</Button></a></span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -211,7 +211,7 @@ include("admin/includes/config.php");
                                     </a>
                                     <span style='text-decoration-line: line-through ; display:inline-block'><?php echo "$". $row_item["item_price"];?> </span>
                                     <span style='display:inline-block ; color:black ; font-weight:bold'><?php echo "$". $row_item["price_offer"];?> </span>
-                                    <span> <a href=" <?php echo ($_SESSION['login']=='true')?"money/addToCart.php?id={$row_item['item_id']}" :"#"?>"><Button style="background-color:#0096db;color:white" class="btn mt-2">Add to Cart</Button></a></span>
+                                    <span> <a href=" <?php echo isset($_SESSION['login'])&&($_SESSION['login']=='true')?"money/addToCart.php?id={$row_item['item_id']}" :"#"?>"><Button style="background-color:#0096db;color:white" class="btn mt-2">Add to Cart</Button></a></span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
